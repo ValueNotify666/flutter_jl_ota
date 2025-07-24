@@ -46,7 +46,7 @@ class _MyAppState extends State<MyApp> {
   void startOta() async {
     String deviceUuid = '2B3681AF-B077-297D-D291-FA4A908CE06A'; // 替换为实际 UUID
     if (Platform.isAndroid) {
-      deviceUuid = "C9:EB:4B:A8:52:92";
+      deviceUuid = "00:00:00:55:FB:D4";
     }
     print("flutter_ota_log => ${'startOta 执行了'}");
     String ufwPath = await moveFileToLib();
@@ -63,7 +63,7 @@ class _MyAppState extends State<MyApp> {
 
   /// 调试用
   static moveFileToLib() async {
-    String fileName = 'update.ufw';
+    String fileName = 'update_20250401.ufw';
 
     String filePath = 'assets/$fileName';
     final ByteData data = await rootBundle.load(filePath);

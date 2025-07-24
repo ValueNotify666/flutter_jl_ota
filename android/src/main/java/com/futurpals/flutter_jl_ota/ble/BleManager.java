@@ -482,15 +482,9 @@ public class BleManager {
 
     @SuppressLint("MissingPermission")
     public boolean connectBleDevice(BluetoothDevice device) {
-        Log.e(TAG, "重连 1");
-
 //        if (isConnected) return true;
-        Log.e(TAG, "重连 2");
-
         //TODO 连接设备的方法
         if (null == device || !AppUtil.checkHasConnectPermission(mContext)) return false;
-        Log.e(TAG, "重连 3");
-
        /* if (mUsingDevice != null) {
             JL_Log.e(TAG, "BleDevice is connected, please call disconnectBleDevice method at first.");
             setReconnectDevAddr(null);
@@ -500,13 +494,9 @@ public class BleManager {
             JL_Log.e(TAG, "BleDevice is connecting, please wait.");
             return isConnectingDevice(device);
         }
-        Log.e(TAG, "重连 4");
-
         if (isBleScanning()) {
             stopLeScan();
         }
-        Log.e(TAG, "重连 5");
-
         BluetoothGatt gatt = null;
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -520,7 +510,6 @@ public class BleManager {
                 Log.e(TAG, "gatt ==" + gatt);
             } else {
 //                Log.e(TAG,"connectBleDevice2");
-
                 gatt = device.connectGatt(
                         mContext,
                         false,
@@ -531,7 +520,6 @@ public class BleManager {
             Log.e(TAG, "gatt 连接异常 +" + e);
 //            e.printStackTrace();
         }
-        Log.e(TAG, "重连 6");
 
         boolean ret = gatt != null;
         if (ret) {
