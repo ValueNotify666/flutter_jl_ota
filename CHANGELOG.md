@@ -41,3 +41,12 @@
 ## 0.1.1
 
 - Clean project
+
+
+## 0.1.2
+
+- Clean project
+- 
+## 0.1.3
+
+- Android Update 1.10.0 sdk
