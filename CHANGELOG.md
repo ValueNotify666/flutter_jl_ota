@@ -1,8 +1,44 @@
-## 0.0.1
+## 1.0.0
 
-- Flutter JL OTA
+- Android Update 1.10.0 sdk
 
-## 0.0.2
+## 0.1.3
+
+- Android Update 1.10.0 sdk
+
+## 0.1.2
+
+- Clean project
+
+## 0.1.1
+
+- Clean project
+
+## 0.1.0
+
+- Android Upgrade Test Successful
+
+## 0.0.9
+
+- Fix Android Code
+
+## 0.0.8
+
+- Update README.md
+
+## 0.0.7
+
+- Update README.md
+
+## 0.0.6
+
+- Fix Android Code
+
+## 0.0.5
+
+- Ios Upgrade Test Successful
+
+## 0.0.4
 
 - Fix Invoke error
 
@@ -10,43 +46,10 @@
 
 - Fix Invoke error
 
-## 0.0.4
+## 0.0.2
 
 - Fix Invoke error
 
-## 0.0.5
+## 0.0.1
 
-- Ios Upgrade Test Successful
-
-## 0.0.6
-
-- Fix Android Code
-
-## 0.0.7
-
-- Update README.md
-
-## 0.0.8
-
-- Update README.md
-
-## 0.0.9
-
-- Fix Android Code
-
-## 0.1.0
-
-- Android Upgrade Test Successful
-
-## 0.1.1
-
-- Clean project
-
-
-## 0.1.2
-
-- Clean project
-- 
-## 0.1.3
-
-- Android Update 1.10.0 sdk
+- Flutter JL OTA
