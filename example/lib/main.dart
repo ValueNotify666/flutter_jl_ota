@@ -48,13 +48,13 @@ class _MyAppState extends State<MyApp> {
     if (Platform.isAndroid) {
       deviceUuid = "00:00:00:55:FB:D4";
     }
-    print("flutter_ota_log => ${'startOta 执行了'}");
+    debugPrint("flutter_ota_log => startOta 执行了");
     String ufwPath = await moveFileToLib();
     await OtaService.startOtaUpdate(deviceUuid, ufwPath);
 
     // 监听进度和状态
     OtaService.listenToOtaProgress((progress, status) {
-      print('OTA Progress: $progress%, Status: $status');
+      debugPrint('OTA Progress: $progress%, Status: $status');
       if (status == 'Failed' || status == 'Success') {
         // 可选择取消监听或执行其他逻辑
       }
@@ -72,7 +72,7 @@ class _MyAppState extends State<MyApp> {
     String libPath = await OtaPathUtil.getFilePath(fileName);
     File file = File(libPath);
     await file.writeAsBytes(bytes);
-    print("该文件bytes大小为 ${bytes.length}");
+    debugPrint("该文件bytes大小为 ${bytes.length}");
     return libPath;
   }
 

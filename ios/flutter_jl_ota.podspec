@@ -4,35 +4,30 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'flutter_jl_ota'
-  s.version          = '0.0.1'
-  s.summary          = 'Flutter JL OTA.'
+  s.version          = '1.0.1'
+  s.summary          = 'A Flutter plugin for Over-The-Air (OTA) firmware updates targeting JL chipsets.'
   s.description      = <<-DESC
-  Plugin for JL OTA.
+A Flutter plugin for Over-The-Air (OTA) firmware updates targeting JL (JieLi) chipsets. Supports Android and iOS platforms with progress callbacks and error handling.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://github.com/futurpals/flutter_jl_ota'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'futurpals' => 'https://github.com/futurpals' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*.{h,m,swift}'
   s.dependency 'Flutter'
   s.platform = :ios, '12.0'
 
-  s.framework = "JL_OTALib"
+  s.static_framework = true
+
+  s.framework = 'CoreBluetooth'
 
   s.ios.vendored_frameworks = [
     'Framework/JL_OTALib.framework',
     'Framework/JL_AdvParse.framework',
     'Framework/JL_HashPair.framework',
     'Framework/JL_BLEKit.framework',
-    'Framework/DFUnits.framework'
-  ]
-
-  s.vendored_frameworks = [
-    'JL_OTALib.framework',
-    'JL_AdvParse.framework',
-    'JL_HashPair.framework',
-    'JL_BLEKit.framework',
-    'DFUnits.framework'
+    'Framework/DFUnits.framework',
+    'Framework/JLLogHelper.framework'
   ]
 
   # Flutter.framework does not contain a i386 slice.

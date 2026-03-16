@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class OtaService {
@@ -9,7 +10,7 @@ class OtaService {
       final result = await _channel.invokeMethod('startScan');
       return result == true;
     } catch (e) {
-      print('Error starting scan: $e');
+      debugPrint('Error starting scan: $e');
       return false;
     }
   }
@@ -22,7 +23,7 @@ class OtaService {
       });
       return result == true;
     } catch (e) {
-      print('Error connecting device: $e');
+      debugPrint('Error connecting device: $e');
       return false;
     }
   }
@@ -33,7 +34,7 @@ class OtaService {
       final result = await _channel.invokeMethod('getDeviceInfo');
       return result == true;
     } catch (e) {
-      print('Error getting device info: $e');
+      debugPrint('Error getting device info: $e');
       return false;
     }
   }
@@ -47,7 +48,7 @@ class OtaService {
       });
       return result == true;
     } catch (e) {
-      print('Error starting OTA: $e');
+      debugPrint('Error starting OTA: $e');
       return false;
     }
   }
@@ -58,7 +59,7 @@ class OtaService {
       final result = await _channel.invokeMethod('cancelOtaUpdate');
       return result == true;
     } catch (e) {
-      print('Error cancelling OTA: $e');
+      debugPrint('Error cancelling OTA: $e');
       return false;
     }
   }
