@@ -27,9 +27,8 @@ rootProject.allprojects {
     repositories {
         google()
         mavenCentral()
-        maven { url uri('./repository') }
-        maven {
-            url uri("$dir/repository")
+        maven { // 添加这个指向本地的仓库目录
+            url "$dir/aar/repo"
         }
     }
 }
