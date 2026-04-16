@@ -1,3 +1,16 @@
+// android/build.gradle 文件最顶部
+def localProperties = new Properties()
+def localPropertiesFile = rootProject.file('local.properties')
+if (localPropertiesFile.exists()) {
+    localPropertiesFile.withReader('UTF-8') { reader ->
+        localProperties.load(reader)
+    }
+}
+
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+}
 group = "com.futurpals.flutter_jl_ota"
 version = "1.0.1"
 
@@ -38,7 +51,7 @@ apply plugin: 'maven-publish'
 publishing {
     publications {
         aar(MavenPublication) {
-            groupId = 'com.jl.jl_ota'
+            groupId = 'com.jl'
             artifactId = 'jl_bt_ota'
             version = '1.10.0'
             // 指定本地 .aar 文件的路径
@@ -65,14 +78,7 @@ android {
         minSdk = 21
     }
 
-    def localProperties = new Properties()
-    def localPropertiesFile = rootProject.file('local.properties')
-    if (localPropertiesFile.exists()) {
-        localPropertiesFile.withReader('UTF-8') { reader ->
-            localProperties.load(reader)
-        }
-    }
-    def flutterRoot = localProperties.getProperty('flutter.sdk')
+
 
     dependencies {
         testImplementation("junit:junit:4.13.2")
