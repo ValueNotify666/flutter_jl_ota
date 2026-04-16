@@ -35,7 +35,23 @@ rootProject.allprojects {
 }
 
 apply plugin: "com.android.library"
-
+apply plugin: 'maven-publish'
+publishing {
+    publications {
+        aar(MavenPublication) {
+            groupId = 'com.jl.jl_ota'
+            artifactId = 'jl_bt_ota'
+            version = '1.10.0'
+            // 指定本地 .aar 文件的路径
+            artifact("libs/jl_bt_ota_V1.10.0_10932-release.aar")
+        }
+    }
+    repositories {
+        maven {
+            url = uri("file://${rootProject.projectDir}/aar/repo")
+        }
+    }
+}
 android {
     namespace = "com.futurpals.flutter_jl_ota"
 
@@ -64,7 +80,10 @@ android {
         testImplementation("org.mockito:mockito-core:5.2.0")
         implementation 'androidx.annotation:annotation:1.9.1'
         implementation 'androidx.appcompat:appcompat:1.7.0'
-        implementation 'com.jl:jl-bt-ota:1.10.0'
+//        implementation 'com.jl:jl-bt-ota:1.10.0'
+        /// 需要通过发布 local maven 避免flutter module打包的aar在安卓原生进行aar集成时找不到jl ota
+        implementation 'com.jl:jl_bt_ota:1.10.0'
+
         compileOnly files("$flutterRoot/bin/cache/artifacts/engine/android-arm/flutter.jar")
     }
 

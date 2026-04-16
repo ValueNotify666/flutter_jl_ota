@@ -1,4 +1,9 @@
 # Changelog
+## \[1.0.4\]
+### Fixed
+- Migrated the `com.jl:jl-bt-ota` dependency to be served from a local Maven repository, achieving zero-invasion integration.
+- Fixed an issue where the native Android project failed to resolve `com.jl:jl-bt-ota` when consuming the AAR built from the Flutter module.
+
 ## \[1.0.3\]
 ### Fixed
 - fix ios bug
