@@ -25,24 +25,13 @@ buildscript {
     }
 }
 
-def getCurrentProjectDir() {
-    String result = ""
-    rootProject.allprojects { project ->
-        if (project.properties.get("identityPath").toString() == ":flutter_jl_ota") {
-            result = project.properties.get("projectDir").toString()
-        }
-    }
-    return result
-}
+
 
 rootProject.allprojects {
-    def dir = getCurrentProjectDir()
-    repositories {
+     repositories {
         google()
         mavenCentral()
-        maven { // 添加这个指向本地的仓库目录
-            url "$dir/aar/repo"
-        }
+         maven { url "$rootProject.projectDir/aar/repo" }
     }
 }
 
